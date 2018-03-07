@@ -31,17 +31,17 @@ However our model can also run with static array of data, we will still see how 
 Copy the file assets/weight-height.csv given in this repo to the assets folder in your assets folder.
 
 Click on the left hand side option of data and add the new data source, in the "file selection" tab select the Path as 'local' and select the weight-height.csv file here, let all other options be as it is.
-![data-prep1](images/dataprep-icon.png)
+![data-prep1](https://github.com/brijrajsingh/LinearRegression-AMLWorkbench/blob/master/images/dataprep-icon.png)
 
 
 This is how the data tab looks like after the file is imported.
 
-![dataprep-data](images/dataprep-data.png)
+![dataprep-data](https://github.com/brijrajsingh/LinearRegression-AMLWorkbench/blob/master/images/dataprep-data.png)
 
 
 As you can see the data has height in inches and weight in Pounds. We need to change the height to feets and weight to Kgs. Click on the "prepare" icon and select "New data preparation package" and give it a name like "Prep1". It'll show you a similar tab but now you can play with the data and each step will be recorded for you.
 1. Convert Height in inches to Feet - Right click on the Height column header and select optin "add Column (script)" - Name the new column as "Heightft" and the expression formula as row.Height/12 as shown in Picture
-![dataprep-heightft](images/dataprep-heightft.png)
+![dataprep-heightft](https://github.com/brijrajsingh/LinearRegression-AMLWorkbench/blob/master/images/dataprep-heightft.png)
 
 A new column will show up right next to Height column with this name, we must adjust the precision now, right click on header of "Heightft" and select option "Adjust precision" and select decimal places as 1
 2. Convert Weight in Pounds to Kg - Similar to the above step the formula will be row.Weight/2.2 and keep the column name as "WeightKg" - don't forget to adjust the precision.
@@ -81,7 +81,7 @@ plt.show()
 There are library references that you may not need right now and that's alright, we'll use them later.
 The above code will show you a plot like this
 
-![Height Weight Plot](images/base-height-weight.png)
+![Height Weight Plot](https://github.com/brijrajsingh/LinearRegression-AMLWorkbench/blob/master/images/base-height-weight.png)
 
 
 A perfect case by the way of Linear regression where the weight seems to be proportional (not exactly) to height, the regression is very much visible from data itself. 
@@ -111,7 +111,7 @@ plt.ylabel("weight")
 plt.show()
 ```
 
-![Height Weight Fit](images/fit-height-weight.png)
+![Height Weight Fit](https://github.com/brijrajsingh/LinearRegression-AMLWorkbench/blob/master/images/fit-height-weight.png)
 
 
 You can see that the points are near or around this line, The model would rarely be fully fit unless its a pure linear relationship. We are not looking for the prefect linear relationship either.
@@ -150,7 +150,7 @@ After running the file you'll relaize there is no outputs folder getting generat
 
 There are 2 ways to get this file, either click on the "Watch" icon in the left pane which also says "Runs" or click on the right side pane of "Jobs" for the python run of your file. select the file in outputs and click on "download" icon to download it to code folder.
 
-![Model Train History](images/model-train-history.png)
+![Model Train History](https://github.com/brijrajsingh/LinearRegression-AMLWorkbench/blob/master/images/model-train-history.png)
 
 
 #### Operationlize the Model
@@ -260,7 +260,7 @@ This command will generate a pair of keys, keep them with you.
 Use Any REST API client and create Header objects, one for Content-Type as application/json and another for Authoriization as Bearer PrimaryKey.
 Use the Method type as POST and use the CURL POST URL and data format. At the end this is how your REST API call should look like
 
-![REST-API-Call](images/final-rest.png)
+![REST-API-Call](https://github.com/brijrajsingh/LinearRegression-AMLWorkbench/blob/master/images/final-rest.png)
 
 
 
@@ -277,3 +277,8 @@ az ml env delete -n myamlenvcluster -g myamlenvclusterrg
 ```
 
 If you still find the VMs after sometime that means the same resource group may not have been used, in which case you must delete the resource group separately.
+
+##### Credits
+- https://towardsdatascience.com/simple-and-multiple-linear-regression-in-python-c928425168f9 
+- https://quickkt.com/tutorials/artificial-intelligence/machine-learning/linear-regression-python-scikit-learn/
+- https://blogs.technet.microsoft.com/machinelearning/2017/09/25/deploying-machine-learning-models-using-azure-machine-learning/
