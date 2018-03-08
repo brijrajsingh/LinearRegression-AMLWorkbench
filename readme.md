@@ -5,8 +5,10 @@ This repo walks you through the development and operationalization of a Linear r
 ### Pre-requisites
 
   - Prepare a [Data Science Virtual Machine on Azure](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/provision-vm) (you can use your local machine but DSVM comes pre-installed with Lots of ML libraries.
+  
+  Select Windows server 2016 Data center and the region as East US 2 and Size as Standard B2ms (2 vcpus, 8 GB memory) for this workshop.
   - Install Azure Machine learning workbench
-    - On Data science VM the setup can be found on desktop
+    - On Data science VM the setup of Azure Machine learning workbench with the name "AmlWorkbenchSetup" can be found on desktop
     - For local installation you can download it from [here](https://docs.microsoft.com/en-us/azure/machine-learning/preview/quickstart-installation#install-and-log-in-to-workbench) for both Windows and MacOS
     - We will be using the Azure container service for deploying our machine learning model but you can chose to do the local deployment using Docker container. Know more [here](https://docs.docker.com/engine/installation/)
 
@@ -270,6 +272,9 @@ Use the Method type as POST and use the CURL POST URL and data format. At the en
 
 
 ### Tear-down
+
+**Note** - Continue with Tear down only after speaking with your workshop Mentor as there may be another workshop ahead where you may need the same VM of ML environment/account setup.
+
 It could be expensive to keep this runnig in your test environment, use the below commands for tear-down
 
 ```
@@ -286,3 +291,4 @@ If you still find the VMs after sometime that means the same resource group may 
 - https://towardsdatascience.com/simple-and-multiple-linear-regression-in-python-c928425168f9 
 - https://quickkt.com/tutorials/artificial-intelligence/machine-learning/linear-regression-python-scikit-learn/
 - https://blogs.technet.microsoft.com/machinelearning/2017/09/25/deploying-machine-learning-models-using-azure-machine-learning/
+- https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/provision-vm
