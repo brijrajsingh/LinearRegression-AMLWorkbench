@@ -20,6 +20,23 @@ This repo walks you through the development and operationalization of a Linear r
 
 #### Start an Azure ML workbench project
 Open the Azure ML workbench and login into your Azure account.
+
+Install the Azure-Cli-ML tool using the below commmand - run it in Command prompt as Administrator
+
+`
+pip install azure-cli
+pip install azure-cli-ml
+`
+
+if you have a previous version installed, please uninstall it using following
+
+`pip uninstall azure-cli-ml`
+
+Note - Command line interface can also be installed from the Azure ML workbench using the following command
+
+`pip install -r https://aka.ms/az-ml-o16n-cli-requirements-file`
+
+
 Create a new Workspace and give it a name like "azuremlexpworkspace"
 Click on the + sign and select create new project
 
@@ -227,9 +244,20 @@ if __name__ == '__main__':
 Just like you downloaded the pkl file before download the schema.json and review it.
 
 
-We are not ready to deploy this model on Azure.
+We are now ready to deploy this model on Azure.
 
 #### Azure Deployment
+
+Before you start the deployment, you need to register a few environment providers. Use the following command to register for these providers
+
+```
+az provider register -n Microsoft.MachineLearningCompute
+
+az provider register -n Microsoft.ContainerRegistry
+
+az provider register -n Microsoft.ContainerService
+```
+
 Open the Command shell from the Azure ML workbench file option
 
 1. Login to azure account ```az login```
@@ -243,7 +271,7 @@ You can check the status of cluster creation using command
 4. Setup the Account for model management - this is where your Models are managed in Azure.
 ```az ml account modelmanagement create -n myamlacct -l eastus2 -g myamlenvclusterrg```
 5. We are now ready to deploy the service
-```az ml service create realtime -n weightpredictservice-m model.pkl -f score.py -s schema.json -c aml_config\conda_dependencies.yml -r python --debug```
+```az ml service create realtime -n weightpredictservice -m model.pkl -f score.py -s schema.json -c aml_config\conda_dependencies.yml -r python --debug```
 Omit the debug switch if you don't want to see lots of debug information. This step canalso take upto 10 minutes to complete.
 At the end of service deployment you'll see an output like this
 ```
