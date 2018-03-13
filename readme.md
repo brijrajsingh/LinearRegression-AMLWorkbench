@@ -23,11 +23,11 @@ Open the Azure ML workbench and login into your Azure account.
 
 Install the Azure-Cli-ML tool using the below commmand - run it in Command prompt as Administrator
 
-`
+```
 pip install azure-cli
 
 pip install azure-cli-ml
-`
+```
 
 if you have a previous version installed, please uninstall it using following
 
