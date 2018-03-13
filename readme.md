@@ -25,6 +25,7 @@ Install the Azure-Cli-ML tool using the below commmand - run it in Command promp
 
 `
 pip install azure-cli
+
 pip install azure-cli-ml
 `
 
